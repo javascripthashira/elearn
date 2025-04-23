@@ -44,8 +44,12 @@ public class SecurityConfiguration implements WebMvcConfigurer {
             return config;
         }));
         http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(request-> request.requestMatchers("course/**")
+                .authorizeHttpRequests(request-> request
+                        .requestMatchers("/course")
+                        .permitAll()
+                        .requestMatchers("course/**")
                         .authenticated()
+
                         .requestMatchers("api/v1/auth/**")
                         .permitAll()
                         .requestMatchers("/public-endpoint")
