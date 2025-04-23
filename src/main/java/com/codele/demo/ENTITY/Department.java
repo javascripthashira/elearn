@@ -1,0 +1,5 @@
+package com.codele.demo.ENTITY;
+
+public enum Department {
+    CYBERSECURITY,SOFTWAREENGINEERING,DATASCIENCE,PROJECTMANAGEMENT
+}

@@ -1,0 +1,22 @@
+spring:
+  server:
+    port: ${SERVER_PORT}
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+logging:
+  level:
+    org.springframework.web: DEBUG  # Log Spring web requests and responses
+    org.hibernate.SQL: DEBUG         # Log SQL queries executed by Hibernate
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE  # Log parameter binding in SQL
+    org.springframework.security: DEBUG  # Log Spring Security actions
+    com.Project.manager: DEBUG  # Log application-specific events
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"  # Customize log format
